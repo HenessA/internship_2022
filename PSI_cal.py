@@ -1,9 +1,6 @@
 import os
 import math 
 
-f1= []
-f2=[]
-
 idt1=[]
 x1=[]
 y1=[]
@@ -34,7 +31,7 @@ with open("test_prog.txt", "r") as res_align:
 		#ligne_res= ligne.split()
 		#print(ligne_res)
 		#for i in range(0,len(ligne_res),1):
-		if ligne.startswith(('g','c','a','u','-')): 
+		if ligne.startswith(('g','c','a','u','-')): # Identification des séquences nucléotidiques
 			l1.append(ligne)
 			l2.append(ligne)
 l1= l1[0]

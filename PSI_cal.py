@@ -73,7 +73,7 @@ print(cpt)
 #		dy= y1[i]-y2[j]
 #		dz= z1[i]-z2[j]
 #		#print(round(dx,3), round (dy,3), round(dz, 3))
-#		d = math.sqrt((dx*dx)+(dy*dy)+(dz*dz))
+#		d = math.sqrt((dx**2)+(dy**2)+(dz**2))
 #		if d < 4: 
 #			print(d)
 		

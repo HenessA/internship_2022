@@ -14,7 +14,7 @@ x2=[]
 y2=[]
 z2=[]
 
-#Recuperation des coordonnees de tous les calpha et identifiants : 
+#Recuperation des coordonnees des calpha alignes : 
 #with open("mega_file.pdb","r") as pdb : #contient tous les fichiers pdb
 	#for ligne in f1:
 #		if ligne[0:6]== 'HEADER': 

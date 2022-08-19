@@ -69,9 +69,9 @@ print(cpt)
 #for i in range(0,len(x),1): 
 #	for j in range(i+1, len(x)-1,1):
 #		#paire= idt[i], idt[j]
-#		dx= x[i]-x[j]
-#		dy= y[i]-y[j]
-#		dz= z[i]-z[j]
+#		dx= x1[i]-x2[j]
+#		dy= y1[i]-y2[j]
+#		dz= z1[i]-z2[j]
 #		#print(round(dx,3), round (dy,3), round(dz, 3))
 #		d = math.sqrt((dx*dx)+(dy*dy)+(dz*dz))
 #		if d < 4: 

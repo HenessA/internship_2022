@@ -1,6 +1,9 @@
 import os
 import math 
 
+f1= [] #pdb fichier 1
+f2= [] #pdb fichier 2
+
 idt1=[]
 x1=[]
 y1=[]
@@ -15,11 +18,19 @@ z2=[]
 #with open("mega_file.pdb","r") as pdb : #contient tous les fichiers pdb
 	#for ligne in f1:
 #		if ligne[0:6]== 'HEADER': 
-#			idt.append(ligne[62:66])
-#		elif ligne[0:4] == 'ATOM':
-#			x.append(float(ligne[31:38]))
-#			y.append(float(ligne[39:46]))
-#			z.append(float(ligne[47:54]))
+#			idt1.append(ligne[62:66])
+#		elif ligne[0:4] == 'ATOM' and ligne[23:26] == position1:
+#			x1.append(float(ligne[31:38]))
+#			y1.append(float(ligne[39:46]))
+#			z1.append(float(ligne[47:54]))
+#	for ligne in f2:
+#		if ligne[0:6]== 'HEADER': 
+#			idt2.append(ligne[62:66])
+#		elif ligne[0:4] == 'ATOM' and ligne[23:26] == position2:
+#			x2.append(float(ligne[31:38]))
+#			y2.append(float(ligne[39:46]))
+#			z2.append(float(ligne[47:54]))
+
 
 l1=[]
 l2=[]
@@ -31,7 +42,7 @@ with open("test_prog.txt", "r") as res_align:
 		#ligne_res= ligne.split()
 		#print(ligne_res)
 		#for i in range(0,len(ligne_res),1):
-		if ligne.startswith(('g','c','a','u','-')): # Identification des séquences nucléotidiques
+		if ligne.startswith(('g','c','a','u','-')): 
 			l1.append(ligne)
 			l2.append(ligne)
 l1= l1[0]
@@ -39,11 +50,15 @@ l2= l2[-1]
 print(type(l2))
 print(l1, l2)
 
-
+position1=[]
+position2=[]
 cpt=0
 for i in range(0,len(l1),1):
 	if l1[i] != "-" and l2[i] != "-":
 		cpt+=1				#Compte les calpha alignes
+		position1 = l1.index(l1[i])
+		position2 = l2.index(l2[i])
+		print(position1, position2)
 print(cpt)
 
 	
@@ -86,8 +101,8 @@ with open("test_prog.txt", "r") as res_align:
 			N = longueur1
 print('RNA le plus petit contient ',N,'nucleotides.')
 
-PSI = 100*(n_al/N)
-print(PSI)
+#PSI = 100*(n_al/N)
+#print(PSI)
 
 #for i in range(0,len(x),1):
 	#print(idt[i],x[i],y[i],z[i])

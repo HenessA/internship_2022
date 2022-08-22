@@ -55,12 +55,13 @@ with open("test_prog.txt",'r') as res_align:
 #Recuperation des coordonnees des calpha alignes :
 with open(idt1,"r") as f1 : 
 	for ligne in f1:
-		if ligne[0:6]== 'HEADER': 
-			idt1.append(ligne[62:66])
-		elif ligne[0:4] == 'ATOM' and ligne[23:26] == position1:
-			x1.append(float(ligne[31:38]))
-			y1.append(float(ligne[39:46]))
-			z1.append(float(ligne[47:54]))
+		for i in range(0,len(position1),1):
+		#if ligne[0:6]== 'HEADER': 
+		#	idt1.append(ligne[62:66])
+			if ligne[0:4] == 'ATOM' and ligne[23:26] == position1[i]:
+				x1.append(float(ligne[31:38]))
+				y1.append(float(ligne[39:46]))
+				z1.append(float(ligne[47:54]))
 
 with open(idt2,"r") as f2 : 
 	for ligne in f2:

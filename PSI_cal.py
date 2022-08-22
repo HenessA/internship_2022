@@ -43,51 +43,49 @@ for i in range(0,len(l1),1):
 print(cpt)
 
 #Ouverture des pdb correspondants aux alignements :
-#with open("test_prog.txt",'r') as res_align: 
-#	for ligne in res_align: 
-#		if ligne[8:15] == "Chain_1":
-#			idt1.append(ligne[17:25]) 
-#		elif ligne[8:15] == "Chain_2":
-#			idt2.append(ligne[17:25])
+with open("test_prog.txt",'r') as res_align: 
+	for ligne in res_align: 
+		if ligne[8:15] == "Chain_1":
+			idt1.append(ligne[17:25]) 
+		elif ligne[8:15] == "Chain_2":
+			idt2.append(ligne[17:25])
 
-#filename1 = "\\wsl$\Ubuntu\home\henes\exo_python\idt1.txt"
-#filename2 = "\\wsl$\Ubuntu\home\henes\exo_python\idt2.txt"
+filename1 = "\\wsl$\Ubuntu\home\henes\exo_python\idt1.txt"
+filename2 = "\\wsl$\Ubuntu\home\henes\exo_python\idt2.txt"
 
 #Recuperation des coordonnees des calpha alignes :
-#with open(filename1,"r") as f1 : 
-	#for ligne in f1:
-#		if ligne[0:6]== 'HEADER': 
-#			idt1.append(ligne[62:66])
-#		elif ligne[0:4] == 'ATOM' and ligne[23:26] == position1:
-#			x1.append(float(ligne[31:38]))
-#			y1.append(float(ligne[39:46]))
-#			z1.append(float(ligne[47:54]))
+with open(filename1,"r") as f1 : 
+	for ligne in f1:
+		if ligne[0:6]== 'HEADER': 
+			idt1.append(ligne[62:66])
+		elif ligne[0:4] == 'ATOM' and ligne[23:26] == position1:
+			x1.append(float(ligne[31:38]))
+			y1.append(float(ligne[39:46]))
+			z1.append(float(ligne[47:54]))
 
-#with open(filename2,"r") as f2 : 
-#	for ligne in f2:
-#		if ligne[0:6]== 'HEADER': 
-#			idt2.append(ligne[62:66])
-#		elif ligne[0:4] == 'ATOM' and ligne[23:26] == position2:
-#			x2.append(float(ligne[31:38]))
-#			y2.append(float(ligne[39:46]))
-#			z2.append(float(ligne[47:54]))
+with open(filename2,"r") as f2 : 
+	for ligne in f2:
+		if ligne[0:6]== 'HEADER': 
+			idt2.append(ligne[62:66])
+		elif ligne[0:4] == 'ATOM' and ligne[23:26] == position2:
+			x2.append(float(ligne[31:38]))
+			y2.append(float(ligne[39:46]))
+			z2.append(float(ligne[47:54]))
 	
 #Calcul des distances : 
-#dx=[]
-#dy=[]
-#dz=[]
-#for i in range(0,len(x),1): 
-#	for j in range(i+1, len(x)-1,1):
-#		#paire= idt[i], idt[j]
-#		dx= x1[i]-x2[j]
-#		dy= y1[i]-y2[j]
-#		dz= z1[i]-z2[j]
-#		#print(round(dx,3), round (dy,3), round(dz, 3))
-#		d = math.sqrt((dx**2)+(dy**2)+(dz**2))
-#		if d < 4: 
-#			print(d)
-		
-		
+dx=[]
+dy=[]
+dz=[]
+for i in range(0,len(x),1): 
+	for j in range(i+1, len(x)-1,1):
+		paire= idt[i], idt[j]
+		dx= x1[i]-x2[j]
+		dy= y1[i]-y2[j]
+		dz= z1[i]-z2[j]
+		print(round(dx,3), round (dy,3), round(dz, 3))
+		d = math.sqrt((dx**2)+(dy**2)+(dz**2))
+		if d < 4: 
+			print(d)		
 #Calcul PSI :
 n_al = []
 N=[]
@@ -111,8 +109,8 @@ with open("test_prog.txt", "r") as res_align:
 			N = longueur1
 print('RNA le plus petit contient ',N,'nucleotides.')
 
-#PSI = 100*(n_al/N)
-#print(PSI)
+PSI = 100*(n_al/N)
+print(PSI)
 
-#for i in range(0,len(x),1):
-	#print(idt[i],x[i],y[i],z[i])
+for i in range(0,len(x),1):
+	print(idt[i],x[i],y[i],z[i])

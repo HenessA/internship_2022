@@ -43,18 +43,17 @@ for i in range(0,len(l1),1):
 print(cpt)
 
 #Ouverture des pdb correspondants aux alignements :
+idt1=""
+idt2=""
 with open("test_prog.txt",'r') as res_align: 
 	for ligne in res_align: 
 		if ligne[8:15] == "Chain_1":
-			idt1.append(ligne[17:25]) 
+			idt1 = ligne[17:25]
 		elif ligne[8:15] == "Chain_2":
-			idt2.append(ligne[17:25])
-
-filename1 = "\\wsl$\Ubuntu\home\henes\exo_python\idt1.txt"
-filename2 = "\\wsl$\Ubuntu\home\henes\exo_python\idt2.txt"
+			idt2 = ligne[17:25]
 
 #Recuperation des coordonnees des calpha alignes :
-with open(filename1,"r") as f1 : 
+with open(idt1,"r") as f1 : 
 	for ligne in f1:
 		if ligne[0:6]== 'HEADER': 
 			idt1.append(ligne[62:66])
@@ -63,7 +62,7 @@ with open(filename1,"r") as f1 :
 			y1.append(float(ligne[39:46]))
 			z1.append(float(ligne[47:54]))
 
-with open(filename2,"r") as f2 : 
+with open(idt2,"r") as f2 : 
 	for ligne in f2:
 		if ligne[0:6]== 'HEADER': 
 			idt2.append(ligne[62:66])

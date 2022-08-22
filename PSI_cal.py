@@ -14,8 +14,20 @@ x2=[]
 y2=[]
 z2=[]
 
-#Recuperation des coordonnees des calpha alignes : 
-#with open("mega_file.pdb","r") as pdb : #contient tous les fichiers pdb
+ 
+#with open("test_prog.txt",'r') as res_align: 
+#	for ligne in res_align: 
+#		if ligne[8:15] == "Chain_1":
+#			idt1.append(ligne[17:25]) 
+#		elif ligne[8:15] == "Chain_2":
+#			idt2.append(ligne[17:25])
+
+#filename1 = "\\wsl$\Ubuntu\home\henes\exo_python\idt1.txt"
+#filename2 = "\\wsl$\Ubuntu\home\henes\exo_python\idt2.txt"
+
+#Recuperation des coordonnees des calpha alignes :
+			
+#with open(filename1,"r") as f1 : 
 	#for ligne in f1:
 #		if ligne[0:6]== 'HEADER': 
 #			idt1.append(ligne[62:66])
@@ -23,6 +35,8 @@ z2=[]
 #			x1.append(float(ligne[31:38]))
 #			y1.append(float(ligne[39:46]))
 #			z1.append(float(ligne[47:54]))
+
+#with open(filename2,"r") as f2 : 
 #	for ligne in f2:
 #		if ligne[0:6]== 'HEADER': 
 #			idt2.append(ligne[62:66])

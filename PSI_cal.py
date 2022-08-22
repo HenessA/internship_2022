@@ -14,7 +14,35 @@ x2=[]
 y2=[]
 z2=[]
 
- 
+#Recuperation des sequences alignees :
+l1=[]
+l2=[]
+with open("test_prog.txt", "r") as res_align:
+	for ligne in res_align: 
+		#ligne_res= ligne.split()
+		#print(ligne_res)
+		#for i in range(0,len(ligne_res),1):
+		if ligne.startswith(('g','c','a','u','-')): 
+			l1.append(ligne)
+			l2.append(ligne)
+l1= l1[0]
+l2= l2[-1]
+print(type(l2))
+print(l1, l2)
+
+#Compte les calpha alignes
+position1=[]
+position2=[]
+cpt=0
+for i in range(0,len(l1),1):
+	if l1[i] != "-" and l2[i] != "-":
+		cpt+=1				
+		position1 = l1.index(l1[i])
+		position2 = l2.index(l2[i])
+		print(position1, position2)
+print(cpt)
+
+#Ouverture des pdb correspondants aux alignements :
 #with open("test_prog.txt",'r') as res_align: 
 #	for ligne in res_align: 
 #		if ligne[8:15] == "Chain_1":
@@ -26,7 +54,6 @@ z2=[]
 #filename2 = "\\wsl$\Ubuntu\home\henes\exo_python\idt2.txt"
 
 #Recuperation des coordonnees des calpha alignes :
-			
 #with open(filename1,"r") as f1 : 
 	#for ligne in f1:
 #		if ligne[0:6]== 'HEADER': 
@@ -44,37 +71,6 @@ z2=[]
 #			x2.append(float(ligne[31:38]))
 #			y2.append(float(ligne[39:46]))
 #			z2.append(float(ligne[47:54]))
-
-
-l1=[]
-l2=[]
-
-
-#Recuperation des sequences alignees :
-with open("test_prog.txt", "r") as res_align:
-	for ligne in res_align: 
-		#ligne_res= ligne.split()
-		#print(ligne_res)
-		#for i in range(0,len(ligne_res),1):
-		if ligne.startswith(('g','c','a','u','-')): 
-			l1.append(ligne)
-			l2.append(ligne)
-l1= l1[0]
-l2= l2[-1]
-print(type(l2))
-print(l1, l2)
-
-position1=[]
-position2=[]
-cpt=0
-for i in range(0,len(l1),1):
-	if l1[i] != "-" and l2[i] != "-":
-		cpt+=1				#Compte les calpha alignes
-		position1 = l1.index(l1[i])
-		position2 = l2.index(l2[i])
-		print(position1, position2)
-print(cpt)
-
 	
 #Calcul des distances : 
 #dx=[]
